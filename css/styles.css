@@ -1,0 +1,167 @@
+body a {
+	color: #c0af00;
+}
+
+body a:hover {
+	color: #c0af00;
+}
+
+.blog-title a:hover {
+	color: #c0af00;
+}
+
+.main-menu > li:hover > a {
+	background: #c0af00;
+}
+
+.main-menu ul a:hover {
+	background: #c0af00;
+}
+
+a.post-header:hover .post-title {
+	color: #c0af00;
+}
+
+.single .post-meta-top a:hover {
+	color: #c0af00;
+}
+
+.post-content a {
+	color: #c0af00;
+}
+
+.post-content a:hover {
+	color: #c0af00;
+}
+
+.post-content fieldset legend {
+	background-color: #c0af00;
+}
+
+.post-content input[type="submit"]:hover {
+	background-color: #c0af00;
+}
+
+.post-content input[type="reset"]:hover {
+	background-color: #c0af00;
+}
+
+.post-content input[type="button"]:hover {
+	background-color: #c0af00;
+}
+
+.post-meta a:hover {
+	color: #c0af00;
+}
+
+.post-author-inner h3 a:hover {
+	color: #c0af00;
+}
+
+.author-links a:hover {
+	background-color: #c0af00;
+}
+
+.add-comment-title a {
+	color: #c0af00;
+}
+
+.add-comment-title a:hover {
+	color: #c0af00;
+}
+
+.by-post-author {
+	background-color: #c0af00;
+}
+
+.comment-actions a {
+	color: #c0af00;
+}
+
+.comment-actions a:hover {
+	color: #c0af00;
+}
+
+.comment-header cite a:hover {
+	color: #c0af00;
+}
+
+.comment-header span a:hover {
+	color: #c0af00;
+}
+
+.comment-content a {
+	color: #c0af00;
+}
+
+.comment-content a:hover {
+	color: #c0af00;
+}
+
+.comment-actions a:hover {
+	color: #c0af00;
+}
+
+#cancel-comment-reply-link {
+	color: #c0af00;
+}
+
+#cancel-comment-reply-link:hover {
+	color: #c0af00;
+}
+
+.comment-nav-below a:hover {
+	color: #c0af00;
+}
+
+.logged-in-as a {
+	color: #c0af00;
+}
+
+.logged-in-as a:hover {
+	color: #c0af00;
+}
+
+.content #respond input[type="submit"]:hover {
+	background-color: #c0af00;
+}
+
+.archive-container a:hover {
+	color: #c0af00;
+}
+
+.archive-nav a:hover {
+	background: #c0af00;
+}
+
+#wp-calendar tfoot a:hover {
+	color: #c0af00;
+}
+
+.tagcloud a:hover {
+	background: #c0af00;
+}
+
+.tagcloud a:hover:before {
+	border-right-color: #c0af00;
+}
+
+.credits a:hover {
+	color: #c0af00;
+}
+
+.nav-toggle.active {
+	background: #c0af00;
+}
+
+.mobile-menu a:hover {
+	background: #c0af00;
+}
+
+body#tinymce.wp-editor a {
+	color: #c0af00;
+}
+
+body#tinymce.wp-editor a:hover {
+	color: #c0af00;
+}
