@@ -11,21 +11,26 @@
         var itemBall = parseInt(document.getElementById("txt-q-bball").value) || 0,
             itemJersey = parseInt(document.getElementById("txt-q-jersey").value) || 0,
             itemPower = parseInt(document.getElementById("txt-q-power").value) || 0,
+            itemWater = parseInt(document.getElementById('txt-q-water').value) || 0,
 
             shippingState = state.value,
             shippingMethod = document.querySelector("[name=r_method]:checked").value || "",
 
-            totalQty = itemBall + itemJersey + itemPower,
+            totalQty = itemBall + itemJersey + itemPower + itemWater,
             shippingCostPer,
             shippingCost,
             taxFactor = 1,
-            totalItemsPrice = (90 * itemBall) + (25 * itemJersey) + (30 * itemPower),
+            totalItemsPrice = (90 * itemBall) + (25 * itemJersey) + (30 * itemPower) + (4 * itemWater),
             estimate,
             results = document.getElementById("results");
-        
-        
-        if (shippingState === 'CA') taxFactor = 1.075;
-        
+
+
+        if (shippingState === 'CA') {
+            taxFactor = 1.075;
+        } else if (shippingState === 'WA') {
+            taxFactor = 1.065;
+        }
+
         switch(shippingMethod) {
             case 'usps' :
                 shippingCostPer = 2;
@@ -37,13 +42,13 @@
                 shippingCostPer = 0;
                 break;
         }
-            
+
         shippingCost = shippingCostPer * totalQty;
-        
+
         estimate = "$" + ((totalItemsPrice * taxFactor) + shippingCost).toFixed(2);
-        
+
         document.getElementById("txt-estimate").value = estimate;
-        
+
         results.innerHTML = "Total items: " + totalQty + "<br>";
         results.innerHTML += "Total Shipping Cost: $" + shippingCost.toFixed(2) + "<br>";
         results.innerHTML += "Tax: " + ((taxFactor - 1) * 100).toFixed(2) + "% (" + shippingState + ")";
