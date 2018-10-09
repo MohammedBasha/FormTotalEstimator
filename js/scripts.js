@@ -20,7 +20,8 @@
             shippingCost,
             taxFactor = 1,
             totalItemsPrice = (90 * itemBall) + (25 * itemJersey) + (30 * itemPower),
-            estimate;
+            estimate,
+            results = document.getElementById("results");
         
         
         if (shippingState === 'CA') taxFactor = 1.075;
@@ -42,6 +43,10 @@
         estimate = "$" + ((totalItemsPrice * taxFactor) + shippingCost).toFixed(2);
         
         document.getElementById("txt-estimate").value = estimate;
+        
+        results.innerHTML = "Total items: " + totalQty + "<br>";
+        results.innerHTML += "Total Shipping Cost: $" + shippingCost.toFixed(2) + "<br>";
+        results.innerHTML += "Tax: " + ((taxFactor - 1) * 100).toFixed(2) + "% (" + shippingState + ")";
     }
 
     document.addEventListener("DOMContentLoaded", function () {
