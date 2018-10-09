@@ -8,14 +8,40 @@
     function totalEstimator(e) {
         e.preventDefault();
 
-        const itemBall = document.getElementById("txt-q-bball").value,
-              itemJersey = document.getElementById("txt-q-jersey").value,
-              itemPower = document.getElementById("txt-q-power").value,
-              shippingState = state.value,
-              shippingMethod = document.querySelector("[name=r_method]:checked").value;
-              
+        var itemBall = parseInt(document.getElementById("txt-q-bball").value) || 0,
+            itemJersey = parseInt(document.getElementById("txt-q-jersey").value) || 0,
+            itemPower = parseInt(document.getElementById("txt-q-power").value) || 0,
 
-        console.log(itemBall, itemJersey, itemPower, shippingState, shippingMethod);
+            shippingState = state.value,
+            shippingMethod = document.querySelector("[name=r_method]:checked").value || "",
+
+            totalQty = itemBall + itemJersey + itemPower,
+            shippingCostPer,
+            shippingCost,
+            taxFactor = 1,
+            totalItemsPrice = (90 * itemBall) + (25 * itemJersey) + (30 * itemPower),
+            estimate;
+        
+        
+        if (shippingState === 'CA') taxFactor = 1.075;
+        
+        switch(shippingMethod) {
+            case 'usps' :
+                shippingCostPer = 2;
+                break;
+            case 'ups' :
+                shippingCostPer = 3;
+                break;
+            default:
+                shippingCostPer = 0;
+                break;
+        }
+            
+        shippingCost = shippingCostPer * totalQty;
+        
+        estimate = "$" + ((totalItemsPrice * taxFactor) + shippingCost).toFixed(2);
+        
+        document.getElementById("txt-estimate").value = estimate;
     }
 
     document.addEventListener("DOMContentLoaded", function () {
